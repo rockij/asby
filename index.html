@@ -51,7 +51,6 @@
                     <ul>
                         <li data-filter="*">All</li>
                         <li data-filter=".sample">샘플가이드</li>
-                        <li data-filter=".study">스터디</li>
                         <li data-filter=".article">아티클</li>
                     </ul>
                 </div>
@@ -73,6 +72,7 @@
                             <li>폰트사이즈의 기본은 14px 이상</li>
                             <li>단일 태그의 마무리는 항상 / 를 넣어준다</li>
                             <li>색상은 rgba코드로 기정(문자열 구성은 색각이상자가 인식이 불가능)</li>
+                            <li>voice-over에서 a태그 접근성 개선 &lt;a&gt;&lt;span&gt;&lt;/span&gt;&lt;div role="text"&gt;&lt;/div&gt;&lt;/a&gt;</li>
                             <!-- <li> <a href="" target="_blank">참고</a></li> -->
                         </ul>
                     </div>
@@ -80,54 +80,41 @@
             </div>
             <!-- /한줄팁 -->
 
-            <!-- 자주볼것 -->
-            <div>
-                <div class="mix box-item one-line-tip">
-                    <button class="text" onclick="$(this).parent().toggleClass('open')">자주볼것 전체보기 <ion-icon name="folder-open-outline"></ion-icon></button>
-                    <div class="text">
-                        <ul>
-                            <li>접근성 정리 <a href="https://css-tricks.com/newsletter/263-accessibility-round-up/" target="_blank">연결</a></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /자주볼것 -->
-
-            <!-- 스터디 -->
-            <div>
-                <div class="mix box-item study">
-                    <h2 class="text">
-                        <a href="WAI-AREA속성_상태.html">WAI-AREA 속성과 상태</a>
-                    </h2>
-                </div>
-                
-                <div class="mix box-item study">
-                    <h2 class="text">
-                        <a href="WAI-AREA역할(Role).html">WAI-ARIA 역할 - Role</a>
-                    </h2>
-                </div>
-    
-                <div class="mix box-item study">
-                    <h2 class="text">
-                        <a href="IOS_Voice_Over_A태그_접근성개선.html">IOS Voice Over에서 A태그의 접근성 개선하기</a>
-                    </h2>
-                </div>
-            </div>            
-            <!-- /스터디 -->
-
-            <!-- 샘플가이드 -->
+            <!-- 가이드 -->
             <div>
                 <div class="mix box-item sample">
                     <h2 class="text">
-                        <a href=".https://rockij.github.io/blog/popup/accessible_modal_dialog.html" target="_blank">접근성 모달 윈도우</a>
+                        <a href="dialog_focus_trapping.html" target="_blank">요소 내부에 포커스를 잡기 위한 CSS 접근 방식</a>
+                    </h2>
+                </div>
+                <div class="mix box-item sample">
+                    <h2 class="text">
+                        <a href="accessible_modal_dialog.html" target="_blank">접근성 모달 윈도우</a>
                     </h2>
                 </div>
             </div>
-            <!-- /샘플가이드 -->
+            <!-- /가이드 -->
 
             <!-- 아티클 -->
             <div>
+                <div class="mix box-item article">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/some-articles-about-accessibility-ive-saved-recently-iv/" target="_blank" title="새창열기">최근에 저장한 접근성에 대한 일부 기사 IV</a>
+                    </h2>
+                </div>
+
+                <div class="mix box-item article">
+                    <h2 class="text">
+                        <a href="https://css-tricks.com/newsletter/263-accessibility-round-up/" target="_blank" title="새창열기">접근성 정리</a>
+                    </h2>
+                </div>
+
+                <div class="mix box-item article">
+                    <h2 class="text">
+                        <a href="https://www.deque.com/blog/accessible-aria-buttons/" target="_blank" title="새창열기">ARIA로 접근 가능한 버튼 만들기: A11y 지원 시리즈</a>
+                    </h2>
+                </div>
+
                 <div class="mix box-item article">
                     <h2 class="text">
                         <a href="https://css-tricks.com/do-you-need-an-icon-only-button-without-screwing-up-the-accessibility/" target="_blank" title="새창열기">접근성을 망치지 않고 ICON ONLY 버튼이 필요하십니까?</a>
