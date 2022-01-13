@@ -57,6 +57,24 @@
     </p>
 </div>
 
+<!-- 폼레이블 -->
+<label for="aa">First Name <span class="a11y">Required</span></label>
+<span class="placeholder" id="bb">ex) GIL DONG</span>
+<input type="text" id="aa" aria-describedby="bb error-txt">
+<p id="error-txt">This information is required.</p>
+
+<!-- 로딩 -->
+<div id="loading-start" aria-live="assertive" role="alert"></div>
+<div id="loading-end" aria-live="assertive"></div>
+<!--
+    role="alert" 추가 이유는 스크린리더가 읽고 있는것을 중지하고 alert를 읽기 때문
+    loading-start에만 추가하는 것은 로딩이 보통은 금방끝나기 때문
+-->
+<!-- 
+    loading-start에 로딩이 시작되었다는 안내문구 추가되고
+    로딩이 끝난시점에 loading-end 에 종료안내 문구가 추가되어야한다
+ -->
+
 <script>
 </script>
 
