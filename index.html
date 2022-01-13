@@ -43,13 +43,6 @@
 </header>
 <!-- /header -->
 
-<!-- 
-/**
-    * 유투브 AOA11Y
-    * ! 탭 콘텐츠 접근성 향상 시키기! #12  까지 시청
-**/
- -->
-
 <section class="work-box">
     <div class="container">
         <div class="row">
@@ -89,6 +82,18 @@
                                     <li>예외상황 : 이미지, 지도, 다이어그램, 비더오, 게임 등 2차원 레이아웃을 필요로 하는 콘텐츠</li>
                                 </ul>
                             </li>
+                            <li>
+                                텍스트간격
+                                <ul>
+                                    <li>행간(줄 사이 간격)은 글자 크기(높이)의 1.5배 이상</li>
+                                    <li>단락 간 간격은 글자 크기의 2배 이상으로 간격(마진)을 두어야함</li>
+                                    <li>자간(글자 사이 간격)을 글자 크기 .12배 이상</li>
+                                    <li>어간(단어 사이 간격)은 글자 크기 .16배 이상</li>
+                                    <li>예외사항: PDF, 이미지텍스트, 로고, 비디오캡션, canvas요소</li>
+                                </ul>
+                            </li>
+                            <li>마우스 호버시에 적용되는 컨텐츠는 포커스시에도 적용이 되어야 한다 <a href="https://www.youtube.com/watch?v=fAX-YWWx4Lk" target="_blank">참고</a></li>
+                            <li>시간제한 알림은 시간연장 버튼을 추가하고, aria-live을 이용해 안내제공 <a href="https://www.youtube.com/watch?v=JN7iViOotbc" target="_blank">참고</a></li>
                             <!-- <li> <a href="" target="_blank">참고</a></li> -->
                         </ul>
                     </div>
@@ -98,6 +103,16 @@
 
             <!-- 가이드 -->
             <div>
+                <div class="mix box-item sample">
+                    <h2 class="text">
+                        <a href="sample_markup.html" target="_blank">스크린리더 사용자를 위한 마크업</a>
+                    </h2>
+                </div>
+                <div class="mix box-item sample">
+                    <h2 class="text">
+                        <a href="sample_group_name.html" target="_blank">그룹과 그룹명, 에러메시지</a>
+                    </h2>
+                </div>
                 <div class="mix box-item sample">
                     <h2 class="text">
                         <a href="sample_tab_content.html" target="_blank">탭 콘텐츠 접근성 향상</a>
@@ -119,6 +134,12 @@
 
             <!-- 아티클 -->
             <div>
+                <div class="mix box-item article">
+                    <h2 class="text">
+                        <a href="https://www.w3.org/TR/WCAG21/" target="_blank" title="새창열기">웹접근성 컨텐츠 가이드라인</a>
+                    </h2>
+                </div>
+
                 <div class="mix box-item article">
                     <h2 class="text">
                         <a href="https://css-tricks.com/some-articles-about-accessibility-ive-saved-recently-iv/" target="_blank" title="새창열기">최근에 저장한 접근성에 대한 일부 기사 IV</a>
