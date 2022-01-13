@@ -42,9 +42,15 @@
     overflow: hidden;
     clip: rect(0,0,0,0);
 }
+.skip{position: absolute;top: -100%;z-index:10}
+.skip:focus{top:0;}
 </style>
 </head>
 <body>
+
+<!-- 본문바로가기, body바로 아래 추가 -->
+<a href="#wrap" class="skip">본문바로가기</a>
+<a href="#lnb" class="skip">메인메뉴 바로가기</a>
 
 <!-- 상품가격 및 할인율 -->
 <div id="itemcase_basic">
