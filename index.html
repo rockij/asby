@@ -64,10 +64,24 @@
                     <button class="text" onclick="$(this).parent().toggleClass('open')">한줄팁 전체보기 <ion-icon name="folder-open-outline"></ion-icon></button>
                     <div class="text">
                         <ul>
-                            <li>명도대비 검사기 <a href="https://webaim.org/resources/contrastchecker/" target="_blank">연결</a></li>
-                            <li>웹접근성 평가도구 <a href="https://wave.webaim.org/" target="_blank">연결</a></li>
-                            <li>웹접근성 문제수정 (Accessibility Insights) <a href="https://accessibilityinsights.io/" target="_blank">연결</a></li>
-                            <li>gulp를 사용한 평가도구 gulp-axe-webdriver <a href="https://github.com/felixzapata/gulp-axe-webdriver/" target="_blank">연결</a></li>
+                            <li>
+                                명도대비
+                                <ul>
+                                    <li>검사기 브라우저 <a href="https://webaim.org/resources/contrastchecker/" target="_blank">연결</a></li>
+                                    <li>검사기 윈도우 설치 <a href="https://www.tpgi.com/color-contrast-checker/" target="_blank">연결</a></li>
+                                    <li>텍스트 콘텐츠와 배경간 명동대비는 4.5대1 이상</li>
+                                    <li>화면확대가 가능하도록 구현된 텍스트 콘텐츠 명도대비 3대1</li>
+                                    <li>사이트확대가 가능하다면 결과적으론 3대1까지만 맞추면된다</li>
+                                </ul>
+                            </li>
+                            <li>
+                                평가도구
+                                <ul>
+                                    <li>url로 평가 <a href="https://wave.webaim.org/" target="_blank">연결</a></li>
+                                    <li>크롬설치 문제수정 (Accessibility Insights) <a href="https://accessibilityinsights.io/" target="_blank">연결</a></li>
+                                    <li>gulp를 사용한 평가도구 gulp-axe-webdriver <a href="https://github.com/felixzapata/gulp-axe-webdriver/" target="_blank">연결</a></li>
+                                </ul>
+                            </li>
                             <li>반응형 팝업 가장 좋은 여백 크기는 margin:10vw; padding:10vw;</li>
                             <li>접근성 향상위해 :focus > :focus-visible <a href="basic/css_focus-visible(instead-focus).html" target="_blank">참고</a></li>
                             <li>
@@ -120,6 +134,24 @@
                             <li>aria-live 활용하여 사용자를 고려한 상태메시지 <a href="https://www.youtube.com/watch?v=Bsj2s58GvVA" target="_blank">참고</a></li>
                             <li>datepicker 적용 (ex:대한항공) <a href="https://www.youtube.com/watch?v=ovUMyi-pcbQ" target="_blank">참고</a></li>
                             <li>별점표시 '별다섯개중 몇개'</li>
+                            <li>
+                                랜드마크
+                                <ul>
+                                    <li>baner, main, complementary, contentinfo 최상위 랜드마크</li>
+                                    <li>예를들어 main에 baner랜드마크가 들어가있다면 잘못된 랜드마크</li>
+                                    <li>여러개의 랜드마크 사용시 aria-label, aria-labelledby 사용</li>
+                                    <li>div를 사용한다면 role을 사용</li>
+                                    <li>banner는 페이지에 하나만 존재, sectioning 콘텐츠로는 header와 동일</li>
+                                    <li>complementary는 페이지에 하나만 존재, sectioning 콘텐츠로는 aside와 동일</li>
+                                    <li>contentinfo는 페이지에 하나만 존재, sectioning 콘텐츠로는 footer와 동일</li>
+                                    <li>form은 search랜드마그가 아닌 영역, 레이블 제공(legend)</li>
+                                    <li>search랜드마크는 aria를 사용해서만 부여해줄 수 있다 role="search"</li>
+                                    <li>main은 페이지에 하나만 존재 메인컨텐츠에 적용</li>
+                                    <li>region 랜드마크는 section과 동일</li>
+                                </ul>
+                            </li>
+                            <li>title 속성은 툴팁에 적절할 것 같은 조언 정보를 나타내므로 접근성 측면에선 aria-label 권장</li>
+                            <li>윈도우 고대비 모드 Shift+Alt+PrtSc, 색에 무관한 콘텐츠 인식 <a href="https://www.youtube.com/watch?v=ws-rs2HSF5A" target="_blank">참고</a></li>
                             <!-- <li> <a href="" target="_blank">참고</a></li> -->
                         </ul>
                     </div>
@@ -129,6 +161,11 @@
 
             <!-- 가이드 -->
             <div>
+                <div class="mix box-item sample">
+                    <h2 class="text">
+                        <a href="sample_slider_컴포넌트.html" target="_blank">커스텀 slider 컴포넌트</a>
+                    </h2>
+                </div>
                 <div class="mix box-item sample">
                     <h2 class="text">
                         <a href="sample_markup.html" target="_blank">스크린리더 사용자를 위한 마크업</a>
