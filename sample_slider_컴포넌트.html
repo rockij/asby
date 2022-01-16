@@ -66,14 +66,14 @@
 
 <div class="UiSlider">
     <div class="UiSlider__rail" style="width:200px">
-        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100" aria-valuetext="50%"></div>
+        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100" aria-valuetext="0"></div>
     </div>
     <div class="UiSlider__value">0</div>
 </div>
 
 <div class="UiSlider">
     <div class="UiSlider__rail" style="width:200px">
-        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="20" aria-valuemax="50" aria-valuetext="50%"></div>
+        <div class="UiSlider__thumb" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="20" aria-valuemax="100" aria-valuetext="0"></div>
     </div>
     <div class="UiSlider__value">0</div>
 </div>
@@ -104,7 +104,6 @@ class UiSlider {
         pageDown: 34,
     }
     init(){
-        // console.log(this.sliderNode);
         this._findDomNodeAndSettings();
         this._bindEvents();
         this.moveSliderTo(this.now);
@@ -129,28 +128,43 @@ class UiSlider {
         this.now = valueNow ? valueNow : this.now;
         if(this.valueNode){
             this.valueNode.textContent = this.now + this.unit;
-        }else{
             this.thumbNode.setAttribute('aria-valuetext', this.now + this.unit);
         }
+        // if(this.valueNode){ // 유투브 가이드 버전
+        //     this.valueNode.textContent = this.now + this.unit;
+        // }else{
+        //     this.thumbNode.setAttribute('aria-valuetext', this.now + this.unit);
+        // }
         // railWidth, thumbWidth, thumbHeight
         this.railWidth = this.railNode.getBoundingClientRect().width;
         this.thumbWidth = this.thumbNode.getBoundingClientRect().width;
         this.thumbHeight = this.thumbNode.getBoundingClientRect().height;
-    }
+     }
     _bindEvents(){
-        const { thumbNode, railNode} = this;
+        const { thumbNode, railNode } = this;
         thumbNode.addEventListener('keydown', this.handleThumbKeyDown.bind(this));
-        [thumbNode, railNode].forEach(node => node.addEventListener('pointerdown', this.handlePointerDown.bind(this)));
         thumbNode.addEventListener('focus', this.handleThumbFocus.bind(this));
         thumbNode.addEventListener('blur', this.handleThumbBlur.bind(this));
+        [
+            thumbNode,
+            railNode,
+        ].forEach((node) =>
+            node.addEventListener('pointerdown', this.handlePointerDown.bind(this))
+        );
     }
     moveSliderTo(value){
         const {min, max, unit, thumbNode, valueNode, railWidth, thumbWidth} = this;
         value = value < min ? min : value > max ? max : value;
 
-        valueNode ? (valueNode.textContent = value + unit) : thumbNode.setAttribute('aria-valuetext', value + unit);
+        if(valueNode){
+            valueNode.textContent = value + unit;
+            thumbNode.setAttribute('aria-valuetext', value + unit);
+        }
+        // valueNode // 유투브 가이드 버전
+        //     ? (valueNode.textContent = value + unit)
+        //     : thumbNode.setAttribute('aria-valuetext', value + unit);
         
-        const thumbPosition = Math.round(railWidth * value / max - min) - thumbWidth/2;
+        const thumbPosition = Math.round(railWidth * value / max - min) - thumbWidth / 2;
         thumbNode.style.left = thumbPosition + 'px';
         this.now = value;
     }
@@ -202,8 +216,6 @@ class UiSlider {
             const pointerPosition = e.pageX - railNode.getBoundingClientRect().x;
             const pointerValue = Math.round(pointerPosition/railWidth * (max - min));
             this.moveSliderTo(pointerValue);
-            document.addEventListener('pointermove', handleMove);
-            document.addEventListener('pointerup', handleUp);
         }
         // up
         const handleUp = () => {
@@ -235,8 +247,8 @@ window.addEventListener('DOMContentLoaded', () => {
     [].forEach.call(sliderDomNodes, sliderDomNode => {
         const slider = new UiSlider(sliderDomNode);
         slider.init(); // 컴포넌트 초기화
-    })
-})
+    });
+});
 </script>
 
 </body>
