@@ -168,6 +168,24 @@
     </ul>
 </nav>
 
+<!-- 슬라이드 https://www.w3.org/TR/wai-aria-practices-1.1/#carousel -->
+<!--
+    자동 재생시 정지/재생 버튼이 필요하며 키보드로 접근이 가능해야한다
+    슬라이드 위에 마우스를 올리거나 키보드 접근시 멈춘다면 정지/재생 버튼 안넣어도 됨
+-->
+<section id="mainCarousel" role="region" aria-roledescription="carousel" aria-label="메인 슬라이드">
+    <div class="controls">
+        <button aria-label="이전 슬라이드 보기"></button>
+        <button aria-label="다음 슬라이드 보기" aria-controls="mainCarousel-items"></button>
+        <!-- 기존에 선택된 aria-controls="mainCarousel-items" 값 삭제하고 새로 선택한 버튼으로 추가하여 슬라이드와 연결 -->
+    </div>
+    <ul id="mainCarousel-items" aria-live="off"> <!-- 자동슬라이드시 aria-live="off" 제공 이전/다음 버튼 누를시 aria-live="polite" 변경 -->
+        <li><div role="group" aria-roledescription="slide" aria-label="3개의 슬라이드 중 1번">슬라이드1</div></li>
+        <li><div role="group" aria-roledescription="slide" aria-label="3개의 슬라이드 중 2번">슬라이드2</div></li>
+        <li><div role="group" aria-roledescription="slide" aria-label="3개의 슬라이드 중 3번">슬라이드3</div></li>
+    </ul>
+</section>
+
 <script>
 </script>
 
